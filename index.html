@@ -1,0 +1,2167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>桃園機場到臺北｜成人中文中級班</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.7;
+}
+
+header {
+    background: white;
+    text-align: center;
+    padding: 28px 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    margin: 0 0 5px;
+    font-size: 30px;
+}
+
+header p {
+    margin: 0;
+    color: #666;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 9px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+nav button {
+    border: 1px solid transparent;
+    background: white;
+    padding: 10px 18px;
+    border-radius: 9px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+nav button.active {
+    background: #edf3f9;
+    border-color: #b9c9d9;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+/* 漫畫 */
+.comic {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+/* 文法 */
+.grammar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+}
+
+.grammar-box {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.grammar-box b {
+    font-size: 19px;
+}
+
+.example {
+    color: #666;
+}
+
+/* 對話 */
+.dialog {
+    border-top: 1px solid #ddd;
+    padding: 16px 0;
+}
+
+.dialog:first-child {
+    border-top: none;
+}
+
+.dialog h3 {
+    margin-top: 0;
+}
+
+.turn {
+    padding: 9px 0;
+}
+
+.speaker {
+    font-weight: bold;
+}
+
+.pinyin {
+    color: #59636e;
+}
+
+.english {
+    color: #444;
+}
+
+.audio {
+    margin-top: 5px;
+    padding: 7px 11px;
+    border: none;
+    border-radius: 7px;
+    background: #edf3f9;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* 詞語 */
+.vocab-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+}
+
+.vocab-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    background: white;
+}
+
+.vocab-card .chinese {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.vocab-card .pinyin {
+    margin-top: 2px;
+}
+
+.vocab-card .zhuyin {
+    color: #666;
+    margin-top: 2px;
+}
+
+.vocab-card .english {
+    margin-top: 3px;
+}
+
+/* 互動題目 */
+.quiz {
+    border-top: 1px solid #ddd;
+    padding: 18px 0;
+}
+
+.quiz:first-child {
+    border-top: none;
+}
+
+.choice {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: #f1f3f5;
+    border-radius: 8px;
+    padding: 11px;
+    margin: 7px 0;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.choice:hover {
+    background: #e4e8ec;
+}
+
+.result {
+    font-weight: bold;
+    min-height: 1.7em;
+}
+
+/* 口說挑戰 */
+.challenge {
+    background: #f7fafc;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    padding: 25px;
+}
+
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav button {
+        flex: 1 1 30%;
+        padding: 9px 6px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<header>
+
+<h1>桃園機場到臺北</h1>
+
+<p>
+成人中文中級班｜看圖說話・口語對話・詞語・互動練習
+</p>
+
+</header>
+
+
+<!-- =========================
+     三個主要分頁
+========================= -->
+
+<nav>
+
+<button class="tab active" data-page="story">
+🖼️ 看圖說話與口語對話
+</button>
+
+<button class="tab" data-page="vocab">
+📝 詞語
+</button>
+
+<button class="tab" data-page="practice">
+✏️ 互動練習
+</button>
+
+</nav>
+
+
+<main>
+
+
+<!-- ==================================================
+     PAGE 1
+     看圖說話與口語對話
+================================================== -->
+
+<section id="story" class="page active">
+
+
+<div class="card">
+
+<h2>🖼️ 八格漫畫</h2>
+
+<img
+    class="comic"
+    src="assets/comic.png"
+    alt="桃園機場到臺北八格漫畫"
+>
+
+<p>
+<b>活動：</b>
+請看漫畫，用自己的話說一說每一格發生了什麼事。
+請盡量使用下面的句型。
+</p>
+
+</div>
+
+
+
+<!-- 文法 -->
+
+<div class="card">
+
+<h2>📘 四個句型</h2>
+
+<div class="grammar">
+
+
+<div class="grammar-box">
+
+<b>Vs + 得 + 不得了</b>
+
+<p>
+表示程度非常高。
+</p>
+
+<div class="example">
+例：我累得不得了。
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<b>先……，再……</b>
+
+<p>
+表示事情的先後順序。
+</p>
+
+<div class="example">
+例：先拿行李，再找推車。
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<b>一點 + 都／也 + 不／沒……</b>
+
+<p>
+表示「完全不……」。
+</p>
+
+<div class="example">
+例：我一點也不累。
+</div>
+
+</div>
+
+
+<div class="grammar-box">
+
+<b>從……往……</b>
+
+<p>
+表示移動的方向。
+</p>
+
+<div class="example">
+例：從這裡往右轉。
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     八組口語對話
+========================= -->
+
+<div class="card">
+
+<h2>🗣️ 口語對話示範</h2>
+
+
+
+<!-- 1 -->
+
+<div class="dialog">
+
+<h3>1. 搭飛機</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+你怎麼了？看起來很累。
+
+<br>
+
+<span class="pinyin">
+Nǐ zěnme le? Kàn qǐlái hěn lèi.
+</span>
+
+<br>
+
+<span class="english">
+What's wrong? You look very tired.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('你怎麼了？看起來很累。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+我累得不得了！而且還有一點時差。
+
+<br>
+
+<span class="pinyin">
+Wǒ lèi de bùdéliǎo! Érqiě hái yǒu yìdiǎn shíchā.
+</span>
+
+<br>
+
+<span class="english">
+I'm extremely tired! And I still have some jet lag.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('我累得不得了！而且還有一點時差。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+你吃東西了嗎？
+
+<br>
+
+<span class="pinyin">
+Nǐ chī dōngxi le ma?
+</span>
+
+<br>
+
+<span class="english">
+Have you eaten anything?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('你吃東西了嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+還沒。我現在肚子餓得不得了。
+
+<br>
+
+<span class="pinyin">
+Hái méi. Wǒ xiànzài dùzi è de bùdéliǎo.
+</span>
+
+<br>
+
+<span class="english">
+Not yet. I'm extremely hungry right now.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('還沒。我現在肚子餓得不得了。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 2 -->
+
+<div class="dialog">
+
+<h3>2. 拿行李</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+你的行李找到了嗎？
+
+<br>
+
+<span class="pinyin">
+Nǐ de xíngli zhǎodào le ma?
+</span>
+
+<br>
+
+<span class="english">
+Did you find your luggage?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('你的行李找到了嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+找到了，可是這個行李箱重得不得了！
+
+<br>
+
+<span class="pinyin">
+Zhǎodào le, kěshì zhège xínglixiāng zhòng de bùdéliǎo!
+</span>
+
+<br>
+
+<span class="english">
+Yes, I did, but this suitcase is extremely heavy!
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('找到了，可是這個行李箱重得不得了！')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+那你先拿行李，再找推車吧。
+
+<br>
+
+<span class="pinyin">
+Nà nǐ xiān ná xíngli, zài zhǎo tuīchē ba.
+</span>
+
+<br>
+
+<span class="english">
+Then take your luggage first, and get a cart afterward.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('那你先拿行李，再找推車吧。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+好，我先拿行李，再去找推車。
+
+<br>
+
+<span class="pinyin">
+Hǎo, wǒ xiān ná xíngli, zài qù zhǎo tuīchē.
+</span>
+
+<br>
+
+<span class="english">
+Okay. I'll get my luggage first, and then find a cart.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('好，我先拿行李，再去找推車。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 3 -->
+
+<div class="dialog">
+
+<h3>3. 入境</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+請出示護照。你是來臺灣旅遊嗎？
+
+<br>
+
+<span class="pinyin">
+Qǐng chūshì hùzhào. Nǐ shì lái Táiwān lǚyóu ma?
+</span>
+
+<br>
+
+<span class="english">
+Please show your passport. Are you visiting Taiwan?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('請出示護照。你是來臺灣旅遊嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+對，我來臺灣旅遊。
+
+<br>
+
+<span class="pinyin">
+Duì, wǒ lái Táiwān lǚyóu.
+</span>
+
+<br>
+
+<span class="english">
+Yes, I'm visiting Taiwan.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('對，我來臺灣旅遊。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+需要我幫你嗎？
+
+<br>
+
+<span class="pinyin">
+Xūyào wǒ bāng nǐ ma?
+</span>
+
+<br>
+
+<span class="english">
+Do you need me to help you?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('需要我幫你嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+好，謝謝。這個表格我一點也看不懂。
+
+<br>
+
+<span class="pinyin">
+Hǎo, xièxie. Zhège biǎogé wǒ yìdiǎn yě kàn bù dǒng.
+</span>
+
+<br>
+
+<span class="english">
+Yes, thank you. I don't understand this form at all.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('好，謝謝。這個表格我一點也看不懂。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 4 -->
+
+<div class="dialog">
+
+<h3>4. 出境</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+出口在哪裡？
+
+<br>
+
+<span class="pinyin">
+Chūkǒu zài nǎlǐ?
+</span>
+
+<br>
+
+<span class="english">
+Where is the exit?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('出口在哪裡？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+從這裡往前走，就可以看到出口。
+
+<br>
+
+<span class="pinyin">
+Cóng zhèlǐ wǎng qián zǒu, jiù kěyǐ kàn dào chūkǒu.
+</span>
+
+<br>
+
+<span class="english">
+Walk straight ahead from here, and you'll see the exit.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('從這裡往前走，就可以看到出口。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+到了出口以後呢？
+
+<br>
+
+<span class="pinyin">
+Dào le chūkǒu yǐhòu ne?
+</span>
+
+<br>
+
+<span class="english">
+What about after we reach the exit?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('到了出口以後呢？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+再從出口往右轉，就可以找到接待的人。
+
+<br>
+
+<span class="pinyin">
+Zài cóng chūkǒu wǎng yòu zhuǎn, jiù kěyǐ zhǎodào jiēdài de rén.
+</span>
+
+<br>
+
+<span class="english">
+Then turn right from the exit, and you'll find the person who is meeting you.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('再從出口往右轉，就可以找到接待的人。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 5 -->
+
+<div class="dialog">
+
+<h3>5. 接待</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+嗨！歡迎來臺灣！
+
+<br>
+
+<span class="pinyin">
+Hāi! Huānyíng lái Táiwān!
+</span>
+
+<br>
+
+<span class="english">
+Hi! Welcome to Taiwan!
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('嗨！歡迎來臺灣！')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+謝謝你來接我。沒想到你真的來了！
+
+<br>
+
+<span class="pinyin">
+Xièxie nǐ lái jiē wǒ. Méi xiǎngdào nǐ zhēnde lái le!
+</span>
+
+<br>
+
+<span class="english">
+Thank you for coming to meet me. I didn't expect you to really come!
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('謝謝你來接我。沒想到你真的來了！')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+當然。我幫你訂了旅館。
+
+<br>
+
+<span class="pinyin">
+Dāngrán. Wǒ bāng nǐ dìng le lǚguǎn.
+</span>
+
+<br>
+
+<span class="english">
+Of course. I booked a hotel for you.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('當然。我幫你訂了旅館。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+太好了，謝謝你這麼細心！
+
+<br>
+
+<span class="pinyin">
+Tài hǎo le, xièxie nǐ zhème xìxīn!
+</span>
+
+<br>
+
+<span class="english">
+That's great. Thank you for being so thoughtful!
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('太好了，謝謝你這麼細心！')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 6 -->
+
+<div class="dialog">
+
+<h3>6. 換錢</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+你要先換錢嗎？
+
+<br>
+
+<span class="pinyin">
+Nǐ yào xiān huànqián ma?
+</span>
+
+<br>
+
+<span class="english">
+Do you want to exchange money first?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('你要先換錢嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+對，我想先換一些臺幣。
+
+<br>
+
+<span class="pinyin">
+Duì, wǒ xiǎng xiān huàn yìxiē Táibì.
+</span>
+
+<br>
+
+<span class="english">
+Yes, I'd like to exchange some New Taiwan dollars first.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('對，我想先換一些臺幣。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+換多少？
+
+<br>
+
+<span class="pinyin">
+Huàn duōshǎo?
+</span>
+
+<br>
+
+<span class="english">
+How much would you like to exchange?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('換多少？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+先換一點就好，因為到了臺北再看看。
+
+<br>
+
+<span class="pinyin">
+Xiān huàn yìdiǎn jiù hǎo, yīnwèi dào le Táiběi zài kànkan.
+</span>
+
+<br>
+
+<span class="english">
+Just a little for now. We'll see when we get to Taipei.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('先換一點就好，因為到了臺北再看看。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 7 -->
+
+<div class="dialog">
+
+<h3>7. 看指示牌</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+我們要往哪裡走？
+
+<br>
+
+<span class="pinyin">
+Wǒmen yào wǎng nǎlǐ zǒu?
+</span>
+
+<br>
+
+<span class="english">
+Which way are we going?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('我們要往哪裡走？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+我們要往臺北。
+
+<br>
+
+<span class="pinyin">
+Wǒmen yào wǎng Táiběi.
+</span>
+
+<br>
+
+<span class="english">
+We're heading toward Taipei.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('我們要往臺北。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+那從這裡往右轉嗎？
+
+<br>
+
+<span class="pinyin">
+Nà cóng zhèlǐ wǎng yòu zhuǎn ma?
+</span>
+
+<br>
+
+<span class="english">
+So do we turn right from here?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('那從這裡往右轉嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+對，然後往捷運的方向走。
+
+<br>
+
+<span class="pinyin">
+Duì, ránhòu wǎng jiéyùn de fāngxiàng zǒu.
+</span>
+
+<br>
+
+<span class="english">
+Yes, then walk toward the MRT.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('對，然後往捷運的方向走。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- 8 -->
+
+<div class="dialog">
+
+<h3>8. 搭車</h3>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+好了嗎？我們可以走了嗎？
+
+<br>
+
+<span class="pinyin">
+Hǎo le ma? Wǒmen kěyǐ zǒu le ma?
+</span>
+
+<br>
+
+<span class="english">
+Are you ready? Can we go?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('好了嗎？我們可以走了嗎？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+好了。先進站，再搭捷運到臺北。
+
+<br>
+
+<span class="pinyin">
+Hǎo le. Xiān jìnzhàn, zài dā jiéyùn dào Táiběi.
+</span>
+
+<br>
+
+<span class="english">
+Ready. First enter the station, then take the MRT to Taipei.
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('好了。先進站，再搭捷運到臺北。')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">A：</span>
+今天累不累？
+
+<br>
+
+<span class="pinyin">
+Jīntiān lèi bù lèi?
+</span>
+
+<br>
+
+<span class="english">
+Are you tired today?
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('今天累不累？')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<div class="turn">
+
+<span class="speaker">B：</span>
+累得不得了，但是我很期待！
+
+<br>
+
+<span class="pinyin">
+Lèi de bùdéliǎo, dànshì wǒ hěn qīdài!
+</span>
+
+<br>
+
+<span class="english">
+I'm extremely tired, but I'm really looking forward to it!
+</span>
+
+<br>
+
+<button class="audio"
+onclick="speak('累得不得了，但是我很期待！')">
+🔊 點擊發音
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PAGE 2
+     詞語
+================================================== -->
+
+<section id="vocab" class="page">
+
+<div class="card">
+
+<h2>📝 詞語</h2>
+
+<p>
+中文＋拼音＋注音＋英文
+</p>
+
+<p>
+請點擊「點擊發音」聽一次正常速度的發音。
+</p>
+
+
+<div class="vocab-grid">
+
+
+<!-- 1 -->
+
+<div class="vocab-card">
+
+<div class="chinese">這麼</div>
+
+<div class="pinyin">
+zhème
+</div>
+
+<div class="zhuyin">
+ㄓㄜˋ ˙ㄇㄜ
+</div>
+
+<div class="english">
+so; this much
+</div>
+
+<button class="audio"
+onclick="speak('這麼')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 2 -->
+
+<div class="vocab-card">
+
+<div class="chinese">行李</div>
+
+<div class="pinyin">
+xíngli
+</div>
+
+<div class="zhuyin">
+ㄒㄧㄥˊ ˙ㄌㄧ
+</div>
+
+<div class="english">
+luggage
+</div>
+
+<button class="audio"
+onclick="speak('行李')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 3 -->
+
+<div class="vocab-card">
+
+<div class="chinese">推車</div>
+
+<div class="pinyin">
+tuīchē
+</div>
+
+<div class="zhuyin">
+ㄊㄨㄟ ㄔㄜ
+</div>
+
+<div class="english">
+cart
+</div>
+
+<button class="audio"
+onclick="speak('推車')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 4 -->
+
+<div class="vocab-card">
+
+<div class="chinese">重</div>
+
+<div class="pinyin">
+zhòng
+</div>
+
+<div class="zhuyin">
+ㄓㄨㄥˋ
+</div>
+
+<div class="english">
+heavy
+</div>
+
+<button class="audio"
+onclick="speak('重')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 5 -->
+
+<div class="vocab-card">
+
+<div class="chinese">時差</div>
+
+<div class="pinyin">
+shíchā
+</div>
+
+<div class="zhuyin">
+ㄕˊ ㄔㄚ
+</div>
+
+<div class="english">
+time difference; jet lag
+</div>
+
+<button class="audio"
+onclick="speak('時差')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 6 -->
+
+<div class="vocab-card">
+
+<div class="chinese">臺幣</div>
+
+<div class="pinyin">
+Táibì
+</div>
+
+<div class="zhuyin">
+ㄊㄞˊ ㄅㄧˋ
+</div>
+
+<div class="english">
+New Taiwan dollars
+</div>
+
+<button class="audio"
+onclick="speak('臺幣')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 7 -->
+
+<div class="vocab-card">
+
+<div class="chinese">往</div>
+
+<div class="pinyin">
+wǎng
+</div>
+
+<div class="zhuyin">
+ㄨㄤˇ
+</div>
+
+<div class="english">
+toward
+</div>
+
+<button class="audio"
+onclick="speak('往')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 8 -->
+
+<div class="vocab-card">
+
+<div class="chinese">右轉</div>
+
+<div class="pinyin">
+yòu zhuǎn
+</div>
+
+<div class="zhuyin">
+ㄧㄡˋ ㄓㄨㄢˇ
+</div>
+
+<div class="english">
+turn right
+</div>
+
+<button class="audio"
+onclick="speak('右轉')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 9 -->
+
+<div class="vocab-card">
+
+<div class="chinese">不得了</div>
+
+<div class="pinyin">
+bùdéliǎo
+</div>
+
+<div class="zhuyin">
+ㄅㄨˋ ˙ㄉㄜ ㄌㄧㄠˇ
+</div>
+
+<div class="english">
+extremely; terribly
+</div>
+
+<button class="audio"
+onclick="speak('不得了')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 10 -->
+
+<div class="vocab-card">
+
+<div class="chinese">換錢</div>
+
+<div class="pinyin">
+huàn qián
+</div>
+
+<div class="zhuyin">
+ㄏㄨㄢˋ ㄑㄧㄢˊ
+</div>
+
+<div class="english">
+exchange money
+</div>
+
+<button class="audio"
+onclick="speak('換錢')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 11 -->
+
+<div class="vocab-card">
+
+<div class="chinese">沒想到</div>
+
+<div class="pinyin">
+méi xiǎngdào
+</div>
+
+<div class="zhuyin">
+ㄇㄟˊ ㄒㄧㄤˇ ㄉㄠˋ
+</div>
+
+<div class="english">
+didn't expect; unexpectedly
+</div>
+
+<button class="audio"
+onclick="speak('沒想到')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 12 -->
+
+<div class="vocab-card">
+
+<div class="chinese">桃園</div>
+
+<div class="pinyin">
+Táoyuán
+</div>
+
+<div class="zhuyin">
+ㄊㄠˊ ㄩㄢˊ
+</div>
+
+<div class="english">
+Taoyuan
+</div>
+
+<button class="audio"
+onclick="speak('桃園')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 13 -->
+
+<div class="vocab-card">
+
+<div class="chinese">臺北</div>
+
+<div class="pinyin">
+Táiběi
+</div>
+
+<div class="zhuyin">
+ㄊㄞˊ ㄅㄟˇ
+</div>
+
+<div class="english">
+Taipei
+</div>
+
+<button class="audio"
+onclick="speak('臺北')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 14 -->
+
+<div class="vocab-card">
+
+<div class="chinese">臺灣</div>
+
+<div class="pinyin">
+Táiwān
+</div>
+
+<div class="zhuyin">
+ㄊㄞˊ ㄨㄢ
+</div>
+
+<div class="english">
+Taiwan
+</div>
+
+<button class="audio"
+onclick="speak('臺灣')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 15 -->
+
+<div class="vocab-card">
+
+<div class="chinese">幫</div>
+
+<div class="pinyin">
+bāng
+</div>
+
+<div class="zhuyin">
+ㄅㄤ
+</div>
+
+<div class="english">
+help
+</div>
+
+<button class="audio"
+onclick="speak('幫')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 16 -->
+
+<div class="vocab-card">
+
+<div class="chinese">訂</div>
+
+<div class="pinyin">
+dìng
+</div>
+
+<div class="zhuyin">
+ㄉㄧㄥˋ
+</div>
+
+<div class="english">
+book; reserve
+</div>
+
+<button class="audio"
+onclick="speak('訂')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 17 -->
+
+<div class="vocab-card">
+
+<div class="chinese">省</div>
+
+<div class="pinyin">
+shěng
+</div>
+
+<div class="zhuyin">
+ㄕㄥˇ
+</div>
+
+<div class="english">
+save
+</div>
+
+<button class="audio"
+onclick="speak('省')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 18 -->
+
+<div class="vocab-card">
+
+<div class="chinese">細心</div>
+
+<div class="pinyin">
+xìxīn
+</div>
+
+<div class="zhuyin">
+ㄒㄧˋ ㄒㄧㄣ
+</div>
+
+<div class="english">
+careful; attentive
+</div>
+
+<button class="audio"
+onclick="speak('細心')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+<!-- 19 -->
+
+<div class="vocab-card">
+
+<div class="chinese">接待</div>
+
+<div class="pinyin">
+jiēdài
+</div>
+
+<div class="zhuyin">
+ㄐㄧㄝ ㄉㄞˋ
+</div>
+
+<div class="english">
+receive; welcome; reception
+</div>
+
+<button class="audio"
+onclick="speak('接待')">
+🔊 點擊發音
+</button>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==================================================
+     PAGE 3
+     互動練習
+================================================== -->
+
+<section id="practice" class="page">
+
+
+<div class="card">
+
+<h2>
+✏️ 互動練習：選一個正確答案
+</h2>
+
+
+<!-- Question 1 -->
+
+<div class="quiz">
+
+<p>
+<b>1.</b>
+「我累得不得了」表示：
+</p>
+
+<button class="choice"
+onclick="answer('q1', false)">
+A. 我完全不累
+</button>
+
+<button class="choice"
+onclick="answer('q1', true)">
+B. 我非常累
+</button>
+
+<button class="choice"
+onclick="answer('q1', false)">
+C. 我有一點累
+</button>
+
+<div id="q1" class="result"></div>
+
+</div>
+
+
+<!-- Question 2 -->
+
+<div class="quiz">
+
+<p>
+<b>2.</b>
+哪一句表示正確的先後順序？
+</p>
+
+<button class="choice"
+onclick="answer('q2', false)">
+A. 再拿行李，先找推車。
+</button>
+
+<button class="choice"
+onclick="answer('q2', true)">
+B. 先拿行李，再找推車。
+</button>
+
+<button class="choice"
+onclick="answer('q2', false)">
+C. 往拿行李，再推車。
+</button>
+
+<div id="q2" class="result"></div>
+
+</div>
+
+
+<!-- Question 3 -->
+
+<div class="quiz">
+
+<p>
+<b>3.</b>
+「從這裡往右轉」表示：
+</p>
+
+<button class="choice"
+onclick="answer('q3', true)">
+A. 從這裡開始，方向是右邊。
+</button>
+
+<button class="choice"
+onclick="answer('q3', false)">
+B. 從右邊走回來。
+</button>
+
+<button class="choice"
+onclick="answer('q3', false)">
+C. 不知道方向。
+</button>
+
+<div id="q3" class="result"></div>
+
+</div>
+
+
+<!-- Question 4 -->
+
+<div class="quiz">
+
+<p>
+<b>4.</b>
+哪一句表示「完全不累」？
+</p>
+
+<button class="choice"
+onclick="answer('q4', true)">
+A. 我一點也不累。
+</button>
+
+<button class="choice"
+onclick="answer('q4', false)">
+B. 我累得不得了。
+</button>
+
+<button class="choice"
+onclick="answer('q4', false)">
+C. 我有一點累。
+</button>
+
+<div id="q4" class="result"></div>
+
+</div>
+
+
+</div>
+
+
+
+<!-- 口說挑戰 -->
+
+<div class="card">
+
+<h2>🎤 口說挑戰</h2>
+
+<div class="challenge">
+
+<p>
+請選一格漫畫，用至少兩個句型說完整的句子。
+</p>
+
+<ul>
+
+<li>
+我先……，再……。
+</li>
+
+<li>
+……得不得了。
+</li>
+
+<li>
+我一點也不……。
+</li>
+
+<li>
+從……往……。
+</li>
+
+</ul>
+
+<p>
+<b>挑戰：</b>
+試著把兩個句型放在同一段話裡。
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+成人中文中級班｜桃園機場到臺北
+
+</footer>
+
+
+
+<script>
+
+/* ==========================================
+   Tab 分頁
+========================================== */
+
+document.querySelectorAll(".tab").forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        document.querySelectorAll(".tab").forEach(function(tab) {
+            tab.classList.remove("active");
+        });
+
+        document.querySelectorAll(".page").forEach(function(page) {
+            page.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        document
+            .getElementById(button.dataset.page)
+            .classList.add("active");
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+
+
+
+/* ==========================================
+   中文語音
+========================================== */
+
+function speak(text) {
+
+    if (!("speechSynthesis" in window)) {
+
+        alert("此瀏覽器不支援語音播放。");
+
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    var utterance =
+        new SpeechSynthesisUtterance(text);
+
+    utterance.lang = "zh-TW";
+
+    utterance.rate = 1;
+
+    utterance.pitch = 1;
+
+    speechSynthesis.speak(utterance);
+}
+
+
+
+/* ==========================================
+   互動題目
+========================================== */
+
+function answer(id, correct) {
+
+    var result =
+        document.getElementById(id);
+
+    if (correct) {
+
+        result.textContent =
+            "✓ 正確！";
+
+    } else {
+
+        result.textContent =
+            "✗ 再想一想。";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
